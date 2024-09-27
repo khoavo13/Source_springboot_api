@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/qlhd
+    username: root
+    password: 12345678
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+  security:
+    user:
+      name: admin
+      password: admin
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 128KB
+      max-request-size: 128KB
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+api:
+  prefix:api
+jwt:
+  expiration: 1800  #2592000=30 days = 30 * 24 * 60 * 60
+  secretKey: TaqlmGv1iEDMRiFp/pHuID1+T84IABfuA0xXh4GhiUI=
+  expiration-refresh-token: 3600 #5184000 =60 days = 60 * 24 * 60 * 60
+
